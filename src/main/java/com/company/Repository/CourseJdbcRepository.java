@@ -17,12 +17,15 @@ import java.util.List;
  * @version 7/12/2021
  */
 public class CourseJdbcRepository implements ICrudRepository<Course> {
-    private String dbUrl = "jdbc:mysql://localhost/maplab5";
-    private String user = "Denisa";
-    private String password = "Denisa_1700";
+    private String dbUrl;
+    private String user;
+    private String password;
     private Connection connection;
 
     public CourseJdbcRepository() throws SQLException {
+        this.dbUrl = "jdbc:mysql://localhost/maplab5";
+        this.user = "Denisa";
+        this.password = "Denisa_1700";
         this.connection = DriverManager.getConnection(dbUrl, user, password);
     }
 
